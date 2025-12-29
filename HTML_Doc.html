@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asadullah Khan | Portfolio</title>
+    <link rel="stylesheet" href="CSS_Doc.css"> <!-- Linked Css Doc -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Changing Button -->
+    <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+        <span class="bulb-icon">💡</span>
+        <span class="dark_sun-icon">🔆</span>
+    </button>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="nav-link" data-page="home" onclick="navigateTo('home')">Home</a>
+            <div class="dropdown">
+                <button class="nav-link dropdown-btn">Want To See</button>
+                <div class="dropdown-content">
+                    <a href="#" data-page="academic" onclick="navigateTo('academic')">Academic Background</a>
+                    <a href="#" data-page="cv" onclick="navigateTo('cv')">CV</a>
+                    <a href="#" data-page="work" onclick="navigateTo('work')">My Work</a>
+                </div>
+            </div>
+            <a href="#" class="nav-link" data-page="contact" onclick="navigateTo('contact')">Contact Me</a>
+        </nav>
+    </header>
+
+    <!-- Main Structure -->
+    <main id="mainContent">
+        <!-- Home Page Content -->
+        <section id="homePage" class="page active">
+            <div class="top-left-container">
+                <h3 class="top-left-small"></h3>
+            </div>
+            <div class="profile-name-top">
+                <h1></h1>
+            </div>
+            <div class="home-top-right">
+                <h1 class="profile-name">Asadullah Khan | Cyber Security Enthusiast | Video Editor | Web Designer</h1>
+                <p class="profile-reg">Registration No: 10-001-2025-01107 | UET Peshawar, Abbottabad Campus</p>
+            </div>
+            <div class="profile-container">
+                <div class="profile-image-wrapper">
+                    <img src="Picture.jpeg" alt="Asadullah Khan" class="profile-image" onerror="this.src='https://via.placeholder.com/200?text=AK'">
+                </div>
+                <div class="profile-bio">
+                    <p>I have completed a short introductory cybersecurity training at Digitech Infra Associates Karachi, 
+                        which gave me basic knowledge and sparked a strong interest in the field. I enjoy learning how security 
+                        works and hope to pursue it more seriously in the future.</p>
+                    <p>I also like web design and video editing, and I am building my skills in Python, HTML, CSS and 
+                        Adobe Premiere Pro through practice and small projects.</p>
+                </div>
+            </div>
+            <div class="skills-container">
+                <span class="skill-badge">Adobe Premiere Pro</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">C++</span>
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">JavaScript</span>
+            </div>
+            <div class="profile-buttons">
+                <a href="CV.pdf" download class="btn btn-primary">Download CV</a>
+                <button class="btn btn-secondary" data-page="contact">Contact Me</button>
+            </div>
+        </section>
+
+        <!-- Academic Record Page -->
+        <section id="academicPage" class="page">
+            <div class="container">
+                <h1 class="page-title">Academic Record</h1>
+                
+                <!-- Search/Filter Working -->
+                <div class="search-container">
+                    <input type="text" id="tableSearch" placeholder="Search by level, institute, or year..." class="search-input">
+                </div>
+
+                <!-- Academic Table Show -->
+                <div class="table-wrapper">
+                    <table id="academicTable">
+                        <thead>
+                            <tr>
+                                <th data-sort="sno">S.No <span class="sort-icon">⇅</span></th>
+                                <th data-sort="level">Education Level <span class="sort-icon">⇅</span></th>
+                                <th data-sort="institute">Institute <span class="sort-icon">⇅</span></th>
+                                <th data-sort="year">Year <span class="sort-icon">⇅</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Row Population Done By Js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV View Page -->
+        <section id="cvPage" class="page">
+            <div class="container">
+                <h1 class="page-title">My CV</h1>
+                <p class="page-subtitle">View Only - Download from Home page</p>
+                <div class="cv-viewer">
+                    <iframe id="cvFrame" src="CV.pdf" title="CV Viewer"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Gallery Page -->
+        <section id="workPage" class="page">
+            <div class="container">
+                <h1 class="page-title">Work I've Done</h1>
+                <p class="page-subtitle">Mini Practice Projects in Python | Adobe Premiere Pro | HTML | CSS | JavaScript</p>
+                <div class="projects-grid">
+                    <div class="project-card" data-index="0">
+                        <div class="project-gradient blue">
+                            <span class="project-icon">📚</span>
+                            <h3>Library Store Management</h3>
+                            <p>A complete library management system with book tracking and member management.</p>
+                            <p style="color: white;"><b><i>(Python Basics)</i></b></p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-index="1">
+                        <div class="project-gradient green">
+                            <span class="project-icon">🏦</span>
+                            <h3>Bank Account System</h3>
+                            <p>Banking application with account management, transactions, and balance tracking.</p>
+                            <p style="color: white;"><b><i>(Python Basics)</i></b></p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-index="2">
+                        <div class="project-gradient orange">
+                            <span class="project-icon">⛽</span>
+                            <h3>Fuel Station Billing</h3>
+                            <p>Fuel station management with billing, inventory, and sales reporting.</p>
+                            <p style="color: white;"><b><i>(Python Basics)</i></b></p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-index="3">
+                        <div class="project-gradient purple">
+                            <span class="project-icon">🍽️</span>
+                            <h3>Restaurant Management</h3>
+                            <p>Restaurant POS system with menu management, orders, and billing.</p>
+                            <p style="color: white;"><b><i>(Python Basics)</i></b></p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-index="4">
+                        <div class="project-gradient red">
+                            <span class="project-icon">🎥</span>
+                            <h3>Event Video Editing</h3>
+                            <p>Creative event video edits with cinematic cuts, smooth transitions, and engaging storytelling.</p>
+                            <p style="color: white;"><b><i>(Adobe Premiere Pro)</i></b></p>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-index="5">
+                        <div class="project-gradient teal">
+                            <span class="project-icon">🧩</span>
+                            <h3>Web Designing</h3>
+                            <p>Well-structured and responsive web pages using clean, semantic HTML layouts.</p>
+                            <p style="color: white;"><b><i>(HTML)</i></b></p>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-index="6">
+                        <div class="project-gradient pink">
+                            <span class="project-icon">✨</span>
+                            <h3>Portfolio Designs</h3>
+                            <p>Attractive portfolio designs with modern CSS styling, animations, and effects.</p>
+                            <p style="color: white;"><b><i>(CSS)</i></b></p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-index="7">
+                        <div class="project-gradient cyan">
+                            <span class="project-icon">🚀</span>
+                            <h3>Web Development</h3>
+                            <p>Interactive and dynamic websites powered by JavaScript for smooth user interaction.</p>
+                            <p style="color: white;"><b><i>(JavaScript)</i></b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Page -->
+        <section id="contactPage" class="page">
+            <div class="container">
+                <h1 class="page-title">Contact Me</h1>
+                <p class="page-subtitle">Any Project or just Saying Hello, I'll Love from Your Side</p>
+                
+                <div class="contact-card">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-grid">
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="name">Full Name:</label>
+                                    <input type="text" id="name" name="yaha entry id use karni ha" placeholder="Enter your full name" required>
+                                    <span class="error-message" id="nameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number:</label>
+                                    <input type="tel" id="phone" name="yaha entry id use karni ha" placeholder="+92 300 0000000" required>
+                                    <span class="error-message" id="phoneError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address:</label>
+                                    <input type="email" id="email" name="yaha entry id use karni ha" placeholder="example@mail.com" required>
+                                    <span class="error-message" id="emailError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City/Country:</label>
+                                    <input type="text" id="city" name="yaha entry id use karni ha" placeholder="e.g. Karachi, Pakistan" required>
+                                    <span class="error-message" id="cityError"></span>
+                                </div>
+                            </div>
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="address">Postal Address:</label>
+                                    <textarea id="address" name="yaha entry id use karni ha" rows="2" placeholder="Your street address..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reviews">Review About Site:</label>
+                                    <textarea id="reviews" name="yaha entry id use karni ha" rows="3" placeholder="What do you think about my portfolio?"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Upload Your Image (Optional)</label>
+                                    <div class="upload-wrapper">
+                                        <div class="image-preview-circle" id="imagePreviewCircle">
+                                            <span class="preview-icon"></span>
+                                            <img id="previewImage" src="" alt="Preview" style="display:none;">
+                                        </div>
+                                        <div class="upload-btns">
+                                            <label for="image" class="btn-mini">Select Image</label>
+                                            <input type="file" id="image" name="image" accept="image/*" onchange="previewFile(this)" style="display:none;">
+                                            <button type="button" class="btn-mini btn-danger" id="removeImageBtn" onclick="removeImage()" style="display: none;">Remove</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group full-width" style="margin-top: 20px;">
+                            <label for="suggestions">Suggestions I would Like to Have...</label>
+                            <input type="text" id="suggestions" name="yaha entry id use karni ha" class="suggestions-input" placeholder="Any advice for improvement?">
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thanking Page -->
+        <section id="thanksPage" class="page">
+            <div class="thanks-container">
+                <div class="thanks-icon">✓</div>
+                <h1>Thank You!</h1>
+                <p>Your message has been submitted successfully.</p>
+                <p>I'll get back to you soon!</p>
+                <button class="btn btn-primary" data-page="home">Go Back Home</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Gallery Working Codes -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close">×</button>
+        <button class="lightbox-prev">❮</button>
+        <div class="lightbox-content">
+            <span class="lightbox-icon"></span>
+            <h3 class="lightbox-title"></h3>
+            <p class="lightbox-desc"></p>
+        </div>
+        <button class="lightbox-next">❯</button>
+        <div class="lightbox-dots"></div>
+    </div>
+    
+    <!-- Footer Work -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-heading">Connect With Me</h3>
+            <div class="social-icons">
+                <a href="https://wa.me/923313348075" target="_blank" class="icon whatsapp">
+                    <span class="icon-img">💬</span>
+                </a>
+                <a href="#" class="icon phone" onclick="navigateTo('contact')">
+                    <span class="icon-img">📞</span>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSBml
+                tZPvmzHdftDMcsqFVnVBRmNXwcrhDxJXsjLCNDJDHFbsdMnwNNQTQPsWSqLxkSbvqSK" target="_blank" class="icon email">
+                    <span class="icon-img">✉️</span>
+                </a>
+                <a href="https://www.linkedin.com/in/asadullah-khan-b7a21137a/" target="_blank" class="icon linkedin">
+                    <span class="icon-img">in</span>
+                </a>
+                <a href="https://www.instagram.com/assikhan25/" target="_blank" class="icon instagram">
+                    <span class="icon-img">📸</span>
+                </a>
+            </div>
+            <hr class="footer-line">
+            <div class="footer-bottom">
+                <p>Asadullah Khan. All rights reserved.</p>
+                <p class="footer-tech">Build with HTML | CSS | JavaScript</p>
+            </div>
+        </div>
+        <div class="activate-windows">
+            <p>Activate Windows</p>
+            <p>Go to Settings to activate Windows.</p>
+        </div>
+    </footer>
+
+    <!-- Linking Js Doc -->
+    <script src="Java_Doc.js"></script>
+</body>
+</html>
